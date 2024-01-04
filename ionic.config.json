@@ -1,0 +1,7 @@
+{
+  "name": "MVPapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
