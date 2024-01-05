@@ -1,6 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["projects/**/*"],
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
       "files": ["*.ts"],
@@ -42,5 +43,6 @@
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
-  ]
+  ],
+  "plugins": ["@typescript-eslint"]
 }
