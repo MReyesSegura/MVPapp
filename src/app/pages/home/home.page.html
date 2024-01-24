@@ -1,13 +1,48 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-title class="ion-text-center">
+            <img class="logo" src="/assets/icon/icon-home.png" />
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+    <div class="icons">
+        <div class="icon-top">
+            <div class="profile icon">
+                <ion-icon name="person-outline"></ion-icon>
+                <ion-label>Mi perfil</ion-label>
+            </div>
+
+            <div class="payments icon">
+                <ion-icon name="cash-outline"></ion-icon>
+                <ion-label>Pagos</ion-label>
+            </div>
+
+            <div class="reservations icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+                <ion-label>Reservaciones</ion-label>
+            </div>
+        </div>
+        <div class="icon-bottom">
+            <div class="statements icon">
+                <ion-icon name="documents-outline"></ion-icon>
+                <ion-label>Mis estados de cuenta</ion-label>
+            </div>
+
+            <div class="emergencies icon">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+                <ion-label>Emergencias</ion-label>
+            </div>
+
+            <div class="alerts icon">
+                <ion-icon name="mail-unread-outline"></ion-icon>
+                <ion-label>Avisos</ion-label>
+            </div>
+        </div>
+    </div>
 </ion-content>

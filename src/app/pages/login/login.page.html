@@ -1,12 +1,49 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-    <ion-button slot="start" fill="clear" size="small" (click)="back()">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-title size="large">login</ion-title>
+    <div class="main_content_div">
+        <div class="upper_div">
+            <img src="assets/icon/icon.png" class="logo" />
+
+            <ion-input
+                type="text"
+                placeholder="Usuario o email:"
+                [(ngModel)]="user"
+            ></ion-input>
+            <ion-input
+                type="password"
+                placeholder="Contraseña"
+                [(ngModel)]="password"
+            ></ion-input>
+
+            <div class="fab_div">
+                <ion-fab slot="fixed" (click)="doLogin()">
+                    <ion-fab-button>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+
+            <div class="flex_div">
+                <div class="f_div"></div>
+                <div class="or_div">O</div>
+                <div class="f_div"></div>
+            </div>
+
+            <ion-button expand="block" fill="clear" shape="round">
+                <img src="assets/imgs/gp.png" alt="" />
+                Continua con Google
+            </ion-button>
+
+            <br /><br />
+
+            <div class="lower-text">
+                <ion-label class="bottom_lbl">Sin cuenta? Registrate</ion-label>
+
+                <ion-label
+                    style="position: relative; top: 15px"
+                    class="bottom_lbl"
+                    >Olvidaste contraseña</ion-label
+                >
+            </div>
+        </div>
+    </div>
 </ion-content>
