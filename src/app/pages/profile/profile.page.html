@@ -1,12 +1,111 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>Perfíl</ion-title>
         <ion-button slot="start" fill="clear" size="small" (click)="back()">
             <ion-icon name="arrow-back-outline"></ion-icon>
         </ion-button>
+        <ion-title class="ion-text-center">
+            <img class="logo" src="/assets/icon/icon-home.png" />
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-title size="large">Perfíl</ion-title>
+<ion-content>
+    <div class="main-div">
+        <div class="tabs">
+            <ion-tabs>
+                <ion-tab-bar slot="top">
+                    <ion-tab-button
+                        [class]="profileActive ? 'active-tab' : ''"
+                        (click)="goToProfile()"
+                    >
+                        <ion-icon name="person-outline"></ion-icon>
+                        Perfil
+                    </ion-tab-button>
+                    <ion-tab-button
+                        [class]="passwordActive ? 'active-tab' : ''"
+                        (click)="goToPassword()"
+                    >
+                        <ion-icon name="lock-open-outline"></ion-icon>
+                        Contraseña
+                    </ion-tab-button>
+                </ion-tab-bar>
+            </ion-tabs>
+        </div>
+
+        <div class="profile" *ngIf="profileActive">
+            <ion-list>
+                <ion-item lines="full">
+                    <ion-select
+                        [(ngModel)]="language"
+                        value="Español"
+                        interface="popover"
+                        justify="space-between"
+                        label="Selecciona un idioma:"
+                        labelPlacement="floating"
+                    >
+                        <ion-select-option>Español</ion-select-option>
+                        <ion-select-option>Ingles</ion-select-option>
+                    </ion-select>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-input
+                        labelPlacement="floating"
+                        label="Correo electronico:"
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-input
+                        labelPlacement="floating"
+                        label="RFC:"
+                        style="text-transform: uppercase"
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-input
+                        labelPlacement="floating"
+                        label="Denominación social:"
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-select
+                        [(ngModel)]="cfdi"
+                        value="false"
+                        interface="popover"
+                        justify="space-between"
+                        label="Uso de CFDI:"
+                        labelPlacement="floating"
+                    >
+                        <ion-select-option value="true">Si</ion-select-option>
+                        <ion-select-option value="false">No</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+
+            <ion-button>Guardar información</ion-button>
+        </div>
+
+        <div class="profile password" *ngIf="passwordActive">
+            <ion-list>
+                <ion-item lines="full">
+                    <ion-input
+                        labelPlacement="floating"
+                        label="Nueva contraseña:"
+                    ></ion-input>
+                </ion-item>
+
+                <ion-item lines="full">
+                    <ion-input
+                        labelPlacement="floating"
+                        label="Confirmar contraseña:"
+                    ></ion-input>
+                </ion-item>
+            </ion-list>
+
+            <ion-button>Guardar información</ion-button>
+        </div>
+    </div>
 </ion-content>

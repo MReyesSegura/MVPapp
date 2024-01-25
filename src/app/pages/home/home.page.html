@@ -13,33 +13,33 @@
 <ion-content>
     <div class="icons">
         <div class="icon-top">
-            <div class="profile icon">
+            <div class="profile icon" (click)="redirection('profile')">
                 <ion-icon name="person-outline"></ion-icon>
                 <ion-label>Mi perfil</ion-label>
             </div>
 
-            <div class="payments icon">
+            <div class="payments icon" (click)="redirection('payments')">
                 <ion-icon name="cash-outline"></ion-icon>
                 <ion-label>Pagos</ion-label>
             </div>
 
-            <div class="reservations icon">
+            <div class="reservations icon" (click)="redirection('events')">
                 <ion-icon name="calendar-outline"></ion-icon>
                 <ion-label>Reservaciones</ion-label>
             </div>
         </div>
         <div class="icon-bottom">
-            <div class="statements icon">
+            <div class="statements icon" (click)="redirection('statements')">
                 <ion-icon name="documents-outline"></ion-icon>
                 <ion-label>Mis estados de cuenta</ion-label>
             </div>
 
-            <div class="emergencies icon">
+            <div class="emergencies icon" (click)="redirection('emergencies')">
                 <ion-icon name="alert-circle-outline"></ion-icon>
                 <ion-label>Emergencias</ion-label>
             </div>
 
-            <div class="alerts icon">
+            <div class="notices icon" (click)="redirection('notices')">
                 <ion-icon name="mail-unread-outline"></ion-icon>
                 <ion-label>Avisos</ion-label>
             </div>

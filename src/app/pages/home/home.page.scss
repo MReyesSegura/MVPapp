@@ -9,6 +9,10 @@ ion-header {
     }
 }
 
+// ion-content {
+//     --ion-background-color: #00639c;
+// }
+
 .icons {
     display: flex;
     flex-direction: column;
@@ -19,14 +23,14 @@ ion-header {
         display: flex;
         flex-direction: row;
         margin: 20px 0 0 0;
-        gap: 2px;
+        gap: 3px;
     }
 
     .icon-bottom {
         display: flex;
         flex-direction: row;
         margin: 20px 0 0 0;
-        gap: 2px;
+        gap: 3px;
     }
 
     .icon {
@@ -35,6 +39,7 @@ ion-header {
         justify-content: center;
         align-items: center;
         text-align: center;
+        background-color: rgba(0, 153, 255, 0.082);
 
         height: 110px;
         width: 110px;
