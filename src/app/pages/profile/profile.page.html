@@ -50,6 +50,7 @@
 
                 <ion-item lines="full">
                     <ion-input
+                        [(ngModel)]="email"
                         labelPlacement="floating"
                         label="Correo electronico:"
                     ></ion-input>
@@ -57,6 +58,7 @@
 
                 <ion-item lines="full">
                     <ion-input
+                        [(ngModel)]="rfc"
                         labelPlacement="floating"
                         label="RFC:"
                         style="text-transform: uppercase"
@@ -65,6 +67,7 @@
 
                 <ion-item lines="full">
                     <ion-input
+                        [(ngModel)]="social"
                         labelPlacement="floating"
                         label="Denominación social:"
                     ></ion-input>
@@ -85,27 +88,35 @@
                 </ion-item>
             </ion-list>
 
-            <ion-button>Guardar información</ion-button>
+            <ion-button (click)="saveProfileinformation()"
+                >Guardar información</ion-button
+            >
         </div>
 
         <div class="profile password" *ngIf="passwordActive">
             <ion-list>
                 <ion-item lines="full">
                     <ion-input
+                        [(ngModel)]="password"
                         labelPlacement="floating"
                         label="Nueva contraseña:"
+                        type="password"
                     ></ion-input>
                 </ion-item>
 
                 <ion-item lines="full">
                     <ion-input
+                        [(ngModel)]="passwordC"
                         labelPlacement="floating"
                         label="Confirmar contraseña:"
+                        type="password"
                     ></ion-input>
                 </ion-item>
             </ion-list>
 
-            <ion-button>Guardar información</ion-button>
+            <ion-button (click)="savePasswordInformation()"
+                >Guardar información</ion-button
+            >
         </div>
     </div>
 </ion-content>
