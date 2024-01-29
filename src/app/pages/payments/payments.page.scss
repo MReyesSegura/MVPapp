@@ -1,0 +1,45 @@
+.tabs {
+    height: 50px;
+}
+
+.concept {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 105px;
+
+    ion-checkbox {
+        width: 10%;
+        margin: 0 0 0 25px;
+    }
+
+    .inner-info {
+        margin: 0 0 0 10px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+
+        ion-label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.payment-button {
+    margin: 0 0 20px 20px;
+}
+
+.active-tab {
+    background-color: #007bff;
+    color: #ffffff;
+    transition: 0.5s;
+}

@@ -9,6 +9,62 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-    <ion-title size="large">Pagos</ion-title>
+<ion-content>
+    <div class="tabs">
+        <ion-tabs>
+            <ion-tab-bar slot="top">
+                <ion-tab-button
+                    (click)="goToPayments()"
+                    [class]="paymentsActive? 'active-tab' : ''"
+                >
+                    <ion-icon name="cash-outline"></ion-icon>
+                    Pagos
+                </ion-tab-button>
+                <ion-tab-button
+                    (click)="goToHistory()"
+                    [class]="historyActive? 'active-tab' : ''"
+                >
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    Historial de pagos
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
+    </div>
+
+    <div class="main-div">
+        <div class="payments" *ngIf="paymentsActive">
+            <div class="cards">
+                <ion-card *ngFor="let item of dataSet">
+                    <ion-item>
+                        <ion-label class="concept">
+                            <p style="font-weight: bold">Concepto:</p>
+                            &nbsp;
+                            <p>{{item?.Concepto}}</p>
+                        </ion-label>
+                    </ion-item>
+                    <div class="content">
+                        <ion-checkbox
+                            checked="false"
+                            (ionChange)="addingItem($event, item?.Monto)"
+                        ></ion-checkbox>
+
+                        <ion-item class="inner-info">
+                            <ion-label>
+                                <p style="font-weight: bold">Monto:</p>
+                                <p>${{item.Monto}}</p>
+                                <p style="font-weight: bold; margin-top: 5px">
+                                    Fecha limite de pago:
+                                </p>
+                                <p>{{item.FechaLimiteDePago}}</p>
+                            </ion-label>
+                        </ion-item>
+                    </div>
+                </ion-card>
+            </div>
+
+            <ion-button class="payment-button"> Pagar: ${{total}} </ion-button>
+        </div>
+
+        <div class="history"></div>
+    </div>
 </ion-content>
