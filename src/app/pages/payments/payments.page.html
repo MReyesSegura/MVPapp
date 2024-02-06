@@ -65,6 +65,20 @@
             <ion-button class="payment-button"> Pagar: ${{total}} </ion-button>
         </div>
 
-        <div class="history"></div>
+        <div class="history" *ngIf="historyActive">
+            <ion-item
+                class="history-list"
+                *ngFor="let item of dataSetTwo"
+                lines="full"
+                button
+                detail="false"
+            >
+                <ion-label>
+                    <p>{{item?.title}}</p>
+                    <p style="font-weight: bold">${{item?.amount}}</p>
+                    <p>{{item?.date}}</p>
+                </ion-label>
+            </ion-item>
+        </div>
     </div>
 </ion-content>

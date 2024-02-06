@@ -8,6 +8,7 @@ import { NavController } from '@ionic/angular'
 })
 export class PaymentsPage implements OnInit {
     dataSet: any[] = []
+    dataSetTwo: any[] = []
     total: number = 0
     paymentsActive: boolean = true
     historyActive: boolean = false
@@ -68,9 +69,72 @@ export class PaymentsPage implements OnInit {
             },
         ]
 
-        // this.total = this.dataSet.reduce((prev, current) => {
-        //     return prev + current?.Monto
-        // }, 0)
+        this.dataSetTwo = [
+            {
+                title: 'Item 1',
+                amount: 50.25,
+                date: '2024-01-22 09:30:00',
+                folio: 'F1001',
+            },
+            {
+                title: 'Item 2',
+                amount: 120.75,
+                date: '2024-01-23 14:45:00',
+                folio: 'F1002',
+            },
+            {
+                title: 'Item 3',
+                amount: 75.5,
+                date: '2024-01-24 11:00:00',
+                folio: 'F1003',
+            },
+            {
+                title: 'Item 4',
+                amount: 33.9,
+                date: '2024-01-25 16:20:00',
+                folio: 'F1004',
+            },
+            {
+                title: 'Item 5',
+                amount: 65.0,
+                date: '2024-01-26 13:15:00',
+                folio: 'F1005',
+            },
+            {
+                title: 'Item 6',
+                amount: 90.3,
+                date: '2024-01-27 10:45:00',
+                folio: 'F1006',
+            },
+            {
+                title: 'Item 7',
+                amount: 42.8,
+                date: '2024-01-28 15:05:00',
+                folio: 'F1007',
+            },
+            {
+                title: 'Item 8',
+                amount: 110.0,
+                date: '2024-01-29 12:30:00',
+                folio: 'F1008',
+            },
+            {
+                title: 'Item 9',
+                amount: 28.6,
+                date: '2024-01-30 17:10:00',
+                folio: 'F1009',
+            },
+            {
+                title: 'Item 10',
+                amount: 150.4,
+                date: '2024-01-31 09:00:00',
+                folio: 'F1010',
+            },
+        ]
+
+        this.dataSetTwo.forEach((e) => {
+            e.amount = e.amount.toFixed(2)
+        })
     }
 
     goToPayments() {
